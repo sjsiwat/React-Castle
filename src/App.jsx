@@ -1,20 +1,14 @@
+import { useState } from "react";
+import { Castle } from "./components/Castle";
+
 export default function App() {
+  const [question, setQuestion] = useState("Hello");
+  const [answer, setAnswer] = useState("Johny");
   return (
-    <div className="min-h-screen flex justify-center bg-blue-950">
-      <div className="p-6 gap-y-6 flex flex-col justify-start w-[80%] lg:w-[70%]">
-        <h1 className="w-full p-6 bg-amber-100 font-extrabold">
-          React App Starter
-        </h1>
-        <section className="w-full p-5 bg-amber-100 flex">
-          <ul className="list-inside list-disc flex-1">
-            <span className="font-semibold">Tech Stack:</span>
-            <li>Vite</li>
-            <li>React</li>
-            <li>JavaScript</li>
-            <li>Tailwind</li>
-          </ul>
-        </section>
-      </div>
+    <div className="min-h-screen bg-slate-900 p-4 text-white items-center justify-center flex flex-col">
+      <Castle />
+      {question}
+      {answer}
     </div>
   );
 }
