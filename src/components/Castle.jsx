@@ -1,24 +1,16 @@
 import { Tower } from "./Tower";
-import { Corridor } from "./Corridor";
-import { Room } from "./Room";
-import { Hall } from "./Hall";
-import { Chamber } from "./Chamber";
-import { Gallery } from "./Gallery";
-import { Nook } from "./Nook";
-import { SecretRoom } from "./SecretRoom";
 
-export function Castle() {
+export function Castle({ question, answer, handleAnswer }) {
   return (
     <div className="bg-red-500 p-6 w-full text-center">
       <h1 className="text-white text-3xl">Castle</h1>
-      <Tower />
-      <Chamber />
-      <Room />
-      <Hall />
-      <Corridor />
-      <Gallery />
-      <Nook />
-      <SecretRoom />
+      <p className="text-yellow-400">
+        Message for Secret Room:
+        <span className="text-purple-300">
+          {question ? ` ✔ ${question}` : " Waiting for a message..⏳"}
+        </span>
+      </p>
+      <Tower question={question} answer={answer} handleAnswer={handleAnswer} />
     </div>
   );
 }
